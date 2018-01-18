@@ -78,19 +78,11 @@ function removeFromCart(item) {
 
 function placeOrder(cardNumber) {
   if (cardNumber === undefined) {
-    return console.log("Sorry, we don't have a credit card on file for you..");
+    console.log("Sorry, we don't have a credit card on file for you..");
+    return false;
   }
   else {
-    var prijs = 0;
-    var itemAndPrice = [];
-
-    for (let i = 0; i < cart.length; i++) {
-      let itemAndPrice = cart[i];
-      let item = Object.keys(itemAndPrice)[0];
-      let price = itemAndPrice[item];
-      prijs + price;
-    }
-    return console.log(`Your total cost is \$${prijs}, which will be charged to the card ${cardNumber}.`)
+    return console.log(`Your total cost is ${total()}, which will be charged to the card ${cardNumber}.`)
     cart = [];
   }
 }
