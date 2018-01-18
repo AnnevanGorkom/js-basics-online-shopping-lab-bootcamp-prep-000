@@ -82,6 +82,8 @@ function placeOrder(cardNumber) {
   }
   else {
     var prijs = 0;
+    var itemAndPrice = [];
+
     for (let i = 0; i < cart.length; i++) {
       let itemAndPrice = cart[i];
       let item = Object.keys(itemAndPrice)[0];
