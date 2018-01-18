@@ -77,22 +77,12 @@ function removeFromCart(item) {
 }
 
 function placeOrder(cardNumber) {
-  if (cardNumber === undefined) {
-    console.log("Sorry, we don't have a credit card on file for you..");
+  if (!cardNumber) {
+    console.log("Sorry, we don't have a credit card on file for you.");
     return false;
   }
-  else {
-    return console.log(`Your total cost is ${total()}, which will be charged to the card ${cardNumber}.`)
-    cart = [];
-  }
+
+  console.log(`Your total cost is $${total()}, which will be charged to the card ${cardNumber}.`);
+
+  cart = [];
 }
-
-//The placeOrder() function accepts one argument, a credit card number.
-
-//If no argument is received, the function should print out
-    //Sorry, we don't have a credit card on file for you..
-
-//If a card number is received, the function should print out
-    //Your total cost is $71, which will be charged to the card 83296759.
-          //(where 71 is the value returned by total() and 83296759 is the credit card number passed to placeOrder()).
-    //Then, it should empty the cart array.
