@@ -58,7 +58,17 @@ function total() {
 }
 
 function removeFromCart(item) {
+  itemInCart = false;
+
+  for (var i = 0; i < cart.length; i++) {
+    if (cart[i].hasOwnProperty(item)) {
+      itemInCart = true;
+      cart = cart.slice(0, i).concat(cart.slice(i + 1));
+      cart.length--;
+    }
+  }
   
+  return cart;
 }
 
 function placeOrder(cardNumber) {
